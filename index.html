@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <script>
+      
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('id');
+
+        if (userId) {
+            
+            const appLink = "mywishlist://profile/" + userId;
+            
+            
+            window.location.href = appLink;
+
+        
+            setTimeout(function() {
+      
+                document.body.innerHTML = "<h3>Если приложение не открылось, проверьте, установлено ли оно.</h3>";
+            }, 2000);
+        } else {
+            document.body.innerHTML = "<h3>Ошибка: ID не найден</h3>";
+        }
+    </script>
+</body>
+</html>
